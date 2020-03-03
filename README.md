@@ -200,7 +200,7 @@ With this dependency on the classpath, JUnit 5 will now run the JUnit 4 tests in
 
 
 
-> **Using JUnit Vintage is a great option for legacy projects, or those that have a large amount of existing JUnit 4 tests, but having all the tests be on the JUnit 5 API should be the goal if feasible. **
+> **Using JUnit Vintage is a great option for legacy projects, or those that have a large amount of existing JUnit 4 tests, but having all the tests be on the JUnit 5 API should be the goal if feasible.**
 >
 > **The new features of JUnit 5 can decrease the size/number of tests needed and improve readability whilst maintaining the existing functionality.** 
 
