@@ -224,7 +224,7 @@ The following annotations have changed FQNs:
 | @org.junit.**BeforeClass**                                   | @org.junit.jupiter.api.**BeforeAll**            |
 | @org.junit.**AfterClass**                                    | @org.junit.jupiter.api.**AfterAll**             |
 | @org.junit.**Ignore**                                        | @org.junit.jupiter.api.**Disabled**             |
-| @org.junit.experimental.categories.**Category** (See [Filtering/excluding tests](#filtering/excluding-tests)) | @org.junit.jupiter.api.**Tag**                  |
+| @org.junit.experimental.categories.**Category** (See [Filtering/excluding tests](#filteringexcluding-tests)) | @org.junit.jupiter.api.**Tag**                  |
 | @org.junit.**Rule** (See [Rules](#rules))                    | @org.junit.jupiter.api.extension.**ExtendWith** |
 | @org.junit.**ClassRule** (See [Rules](#rules))               | @org.junit.jupiter.api.extension.**ExtendWith** |
 | @org.junit.runner.**RunWith** (See [Runners]())              | @org.junit.jupiter.api.extension.**ExtendWith** |
