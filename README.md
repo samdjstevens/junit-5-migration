@@ -5,10 +5,10 @@
 ## Table of Contents
 
 - [Why should we upgrade?](#why-should-we-upgrade)
-
 - [New features in JUnit 5](#new-features-in-junit-5)
 - [How to start using JUnit 5](#how-to-start-using-junit-5)
 - [Differences between JUnit 4 and JUnit 5](#differences-between-junit-4-and-junit-5)
+- [Help, questions, comments](#help-questions-comments)
 
 
 
@@ -131,7 +131,7 @@ public void testSomething() {
 
 ### Build configuration
 
-To get started with JUnit 5, add the following dependencies/configuration to the project's build configuration.
+To get started with JUnit 5, add the following dependencies/configuration to the project's build config.
 
 ##### For Gradle
 
@@ -196,7 +196,7 @@ Add the following test dependencies to the pom.xml file:
 </dependency>
 ```
 
-With this dependency on the classpath, JUnit 5 will now run the JUnit 4 tests in the project.
+With this dependency on the classpath, JUnit 5 will now discover & run the JUnit 4 tests in the project.
 
 
 
@@ -300,35 +300,21 @@ In JUnit 5, functionality given by rules should be re-written using the *Extensi
 
 ### Filtering/excluding tests
 
-In JUnit 4, you can choose to only execute certain tests by creater marker interfaces such as `IntegrationTest` and then applying the `@Category(IntegrationTest.class)` annotation to the test method. To then only run tests in a certain category, there are a couple of options. With maven surefire plugin do this:
+In JUnit 4, you can group tests together by creater marker interfaces such as `IntegrationTest` and then applying the @Category annotation to the test class or methods:
 
-```xml
-<plugin>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>2.20.1</version>
-    <configuration>
-        <groups>fully.qualified.name.IntegrationTest</groups>
-    </configuration>
-</plugin>
+```java
+@Category(IntegrationTest.class)
+public class DatabaseTests
+{
+  ...
+}
 ```
 
-Similarly, the `excludedGroups` element can be used to exclude tests of a certain category.
+Groups of tests can then be ran either ran, or excluded, in various different ways.
 
+In **JUnit 5**, the @Category annotation has been replaced with @Tag and now **requires a string argument**, not a class.
 
-
-In **JUnit 5**, the *@Category* annotation has been replaced with `@Tag` and now **requires a string argument**, not a class. 
-
-Filtering with Maven is done in the same way as JUnit 4, but using the *includeTags* tag, and passing in the tag string instead of a class name:
-
-```xml
-<plugin>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>2.20.1</version>
-    <configuration>
-        <includeTags>IntegrationTest</groups>
-    </configuration>
-</plugin>
-```
+To find out more about how to use the new @Tag annotation to filter/exclude tests, see [Using Tags](using-tags.md).
 
 
 
@@ -360,3 +346,8 @@ public class MyTest {
 }
 ```
 
+
+
+## Help, questions, comments
+
+If you have any questions or comments, join the *#junit5-adoption* channel or DM me (*@stevenss*) on Slack.
